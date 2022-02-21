@@ -23,6 +23,7 @@ function entryCountryName() {
 
 function renderCountryesList(countries)
 {
+      clearInput();
     if (countries.length > 10) { 
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
         return;
@@ -40,4 +41,9 @@ function onFetchError() {
     Notiflix.Notify.failure('Oops, there is no country with that name');
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
+}
+
+function clearInput() {
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
 }
